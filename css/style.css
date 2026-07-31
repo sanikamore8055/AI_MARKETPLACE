@@ -1,0 +1,21 @@
+/*Global Styles*/
+body{
+    font-family: Arial,  sans-serif;
+    background-color: #f8f9fa;
+}
+
+
+.hero-section{
+    min-height:80vh;
+    display: flex;
+    align-items: center;
+    background:linear-gradient(to right, #f8f9fa,#f8f9fa,#e3f2fd);
+    padding:40px 0;
+    overflow: hidden;
+}
+
+.btn-primary:hover{
+    background-color: #0b5ed7;
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
