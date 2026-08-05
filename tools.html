@@ -99,18 +99,29 @@
     </section>
 
     <!--Category Section-->
-    <section class="pb-5">
-        <div class="container text-center">
-            <button class="btn btn-primary m2">All</button>
-            <button class="btn btn-outline-primary m-2">Writing</button>
-            <button class="btn btn-outline-primary m2">Coding</button>
-            <button class="btn btn-outline-primary m-2">Image</button>
-            <button class="btn btn-outline-primary m-2">Video</button>
-            <button class="btn btn-outline-primary m-2">productivity</button>
+    <button class="btn btn-primary m-2 filter-btn" data-category="all">
+    All
+</button>
 
-        </div>
+<button class="btn btn-outline-primary m-2 filter-btn" data-category="Writing">
+    Writing
+</button>
 
-    </section>
+<button class="btn btn-outline-primary m-2 filter-btn" data-category="Coding">
+    Coding
+</button>
+
+<button class="btn btn-outline-primary m-2 filter-btn" data-category="Image">
+    Image
+</button>
+
+<button class="btn btn-outline-primary m-2 filter-btn" data-category="Design">
+    Design
+</button>
+
+<button class="btn btn-outline-primary m-2 filter-btn" data-category="Productivity">
+    Productivity
+</button>
 
    <!-- AI Tools Cards -->
 <section class="pb-5">
@@ -120,8 +131,7 @@
         <div class="row">
 
             <!-- Card 1 -->
-            <div class="col-lg-4 col-md-6 mb-4 tool-card">
-
+<div class="col-lg-4 col-md-6 mb-4 tool-card" data-category="Writing">
                 <div class="card h-100 shadow-sm">
 
                     <img src="images/chatgpt.png" class="card-img-top" alt="ChatGPT">
@@ -151,8 +161,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="col-lg-4 col-md-6 mb-4 tool-card">
-
+<div class="col-lg-4 col-md-6 mb-4 tool-card" data-category="Productivity">
                 <div class="card h-100 shadow-sm">
 
                     <img src="images/gemini.png" class="card-img-top" alt="Google Gemini">
@@ -182,8 +191,7 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="col-lg-4 col-md-6 mb-4 tool-card">
-
+<div class="col-lg-4 col-md-6 mb-4 tool-card" data-category="Writing">
                 <div class="card h-100 shadow-sm">
 
                     <img src="images/claude.png" class="card-img-top" alt="Claude">
@@ -213,8 +221,7 @@
             </div>
 
             <!-- Card 4 -->
-            <div class="col-lg-4 col-md-6 mb-4 tool-card">
-
+<div class="col-lg-4 col-md-6 mb-4 tool-card" data-category="Coding">
                 <div class="card h-100 shadow-sm">
 
                     <img src="images/copilot.png" class="card-img-top" alt="GitHub Copilot">
@@ -244,8 +251,7 @@
             </div>
 
             <!-- Card 5 -->
-            <div class="col-lg-4 col-md-6 mb-4 tool-card">
-
+<div class="col-lg-4 col-md-6 mb-4 tool-card" data-category="Image">
                 <div class="card h-100 shadow-sm">
 
                     <img src="images/midjourney.png" class="card-img-top" alt="Midjourney">
@@ -275,8 +281,7 @@
             </div>
 
             <!-- Card 6 -->
-            <div class="col-lg-4 col-md-6 mb-4 tool-card">
-
+<div class="col-lg-4 col-md-6 mb-4 tool-card" data-category="Design">
                 <div class="card h-100 shadow-sm">
 
                     <img src="images/canva.png" class="card-img-top" alt="Canva AI">
@@ -305,9 +310,15 @@
 
             </div>
 
+
+        </div>
+          <div id="noResult" class="alert alert-warning text-center mt-4" style="display:none;">
+            No AI Tools Found
         </div>
 
     </div>
+
+
 
 </section>
 
