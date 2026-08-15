@@ -7,6 +7,8 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 
 let selectedCategory = "all";
 
+
+// Search + Category Filter
 function filterTools() {
 
     const searchText = searchBox.value.toLowerCase().trim();
@@ -19,11 +21,13 @@ function filterTools() {
         const cardCategory = card.getAttribute("data-category");
 
         const matchesSearch = cardText.includes(searchText);
-        const matchesCategory = 
-            selectedCategory === "all" || cardCategory === selectedCategory;
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            cardCategory === selectedCategory;
 
 
-        if(matchesSearch && matchesCategory) {
+        if (matchesSearch && matchesCategory) {
 
             card.style.display = "";
             found = true;
@@ -37,10 +41,14 @@ function filterTools() {
     });
 
 
-    if(found) {
+    if (found) {
+
         noResult.style.display = "none";
+
     } else {
+
         noResult.style.display = "block";
+
     }
 
 }
@@ -55,9 +63,9 @@ searchBox.addEventListener("input", function() {
 
 
 // Category Filter Event
-filterButtons.forEach(function(button){
+filterButtons.forEach(function(button) {
 
-    button.addEventListener("click", function(){
+    button.addEventListener("click", function() {
 
         selectedCategory = button.getAttribute("data-category");
 
@@ -67,6 +75,8 @@ filterButtons.forEach(function(button){
 
 });
 
+
+// Tool Details Data
 const toolData = {
 
     chatgpt: {
@@ -117,60 +127,66 @@ const toolData = {
         link: "https://claude.ai"
     },
 
+
     copilot: {
-    name: "GitHub Copilot",
-    category: "Coding",
-    image: "images/copilot.png",
-    description: "GitHub Copilot is an AI coding assistant that helps developers write code faster and improve productivity.",
-    features: [
-        "Code Suggestions",
-        "Code Completion",
-        "Bug Fixing Assistance",
-        "Programming Help"
-    ],
-    pricing: "Paid Plans",
-    link: "https://github.com/features/copilot"
-},
-midjourney: {
-    name: "Midjourney",
-    category: "Image Generation",
-    image: "images/midjourney.png",
-    description: "Midjourney is an AI image generation tool that creates high-quality images from text prompts.",
-    features: [
-        "AI Image Generation",
-        "Creative Designs",
-        "Text to Image",
-        "Art Creation"
-    ],
-    pricing: "Paid Plans",
-    link: "https://www.midjourney.com"
-},
-canva: {
-    name: "Canva AI",
-    category: "Design",
-    image: "images/canva.png",
-    description: "Canva AI helps users create presentations, graphics, social media designs and creative content easily.",
-    features: [
-        "AI Design Generation",
-        "Presentation Creation",
-        "Graphic Design",
-        "Social Media Content"
-    ],
-    pricing: "Free & Paid Plans",
-    link: "https://www.canva.com/ai-image-generator/"
-},
+        name: "GitHub Copilot",
+        category: "Coding",
+        image: "images/copilot.png",
+        description: "GitHub Copilot is an AI coding assistant that helps developers write code faster and improve productivity.",
+        features: [
+            "Code Suggestions",
+            "Code Completion",
+            "Bug Fixing Assistance",
+            "Programming Help"
+        ],
+        pricing: "Paid Plans",
+        link: "https://github.com/features/copilot"
+    },
+
+
+    midjourney: {
+        name: "Midjourney",
+        category: "Image Generation",
+        image: "images/midjourney.png",
+        description: "Midjourney is an AI image generation tool that creates high-quality images from text prompts.",
+        features: [
+            "AI Image Generation",
+            "Creative Designs",
+            "Text to Image",
+            "Art Creation"
+        ],
+        pricing: "Paid Plans",
+        link: "https://www.midjourney.com"
+    },
+
+
+    canva: {
+        name: "Canva AI",
+        category: "Design",
+        image: "images/canva.png",
+        description: "Canva AI helps users create presentations, graphics, social media designs and creative content easily.",
+        features: [
+            "AI Design Generation",
+            "Presentation Creation",
+            "Graphic Design",
+            "Social Media Content"
+        ],
+        pricing: "Free & Paid Plans",
+        link: "https://www.canva.com/ai-image-generator/"
+    }
 
 };
 
+
+// Get selected tool from URL
 const urlParams = new URLSearchParams(window.location.search);
 
 const selectedTool = urlParams.get("tool");
 
 
-if(selectedTool && toolData[selectedTool]) {
+if (selectedTool && toolData[selectedTool]) {
 
     const tool = toolData[selectedTool];
-
 
     document.getElementById("toolImage").src = tool.image;
     document.getElementById("toolImage").alt = tool.name;
@@ -186,7 +202,8 @@ if(selectedTool && toolData[selectedTool]) {
 
     featureList.innerHTML = "";
 
-    tool.features.forEach(function(feature){
+
+    tool.features.forEach(function(feature) {
 
         const li = document.createElement("li");
 
@@ -198,7 +215,6 @@ if(selectedTool && toolData[selectedTool]) {
 
 
     document.getElementById("toolPricing").textContent = tool.pricing;
-
 
     document.getElementById("toolLink").href = tool.link;
 
